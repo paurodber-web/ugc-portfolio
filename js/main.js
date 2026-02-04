@@ -1,7 +1,6 @@
 // Navigation Scroll Effect
 const nav = document.querySelector('nav');
 const revealElements = document.querySelectorAll('.reveal');
-
 const heroBg = document.querySelector('.hero-bg');
 
 const handleScroll = () => {
@@ -14,20 +13,10 @@ const handleScroll = () => {
         nav.classList.remove('scrolled');
     }
 
-    // Suble Hero Parallax
+    // Subtle Hero Parallax
     if (heroBg) {
         heroBg.style.transform = `translateY(${scrollY * 0.1}px)`;
     }
-
-    // Suble Main Section Parallax (Projects)
-    document.querySelectorAll('.work-item img').forEach(img => {
-        const speed = 0.05;
-        const rect = img.parentElement.getBoundingClientRect();
-        const visiblePct = (window.innerHeight - rect.top) / window.innerHeight;
-        if (visiblePct > 0 && visiblePct < 2) {
-            img.style.transform = `scale(1.1) translateY(${(visiblePct - 0.5) * 40}px)`;
-        }
-    });
 
     // Reveal elements on scroll
     revealElements.forEach(el => {
