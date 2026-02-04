@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=block');
+
 @font-face {
     font-family: 'Satoshi';
     src: url('../assets/fonts/Satoshi-Regular.woff2') format('woff2');
@@ -21,16 +24,6 @@
     font-style: normal;
     font-display: block;
 }
-
-@font-face {
-    font-family: 'Allison';
-    src: url('../assets/fonts/Allison-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: block;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=block');
 
 /* 
   REFINED DESIGN SYSTEM - MODERN & PREMIUM
@@ -59,7 +52,7 @@
     --font-main: 'Satoshi', sans-serif;
     --font-serif: 'Playfair Display', serif;
     --font-heading: 'Playfair Display', serif;
-    --font-script: 'Allison', cursive;
+    --font-script: 'Pinyon Script', cursive;
     --lh-body: 1.6;
     --lh-heading: 1.1;
     --ls-heading: -0.02em;
@@ -88,7 +81,7 @@
 
 .italic {
     font-family: inherit;
-    font-style: normal;
+    font-style: italic;
     font-size: inherit;
     line-height: inherit;
     vertical-align: baseline;
@@ -96,7 +89,7 @@
 
 .script-text {
     font-family: var(--font-script);
-    font-size: 1.8em;
+    font-size: 1.3em;
     line-height: 1;
     vertical-align: baseline;
     font-weight: 400;
@@ -448,9 +441,9 @@ main.subpage-main {
 
 .hero h1 {
     color: #ffffff;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.1;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 400;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
