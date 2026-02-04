@@ -27,6 +27,7 @@
                 <span></span>
             </button>
             <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="services.html">Servicios</a></li>
                 <li><a href="work.html">Proyectos</a></li>
                 <li><a href="about.html" class="active">Sobre mí</a></li>
@@ -36,27 +37,28 @@
         </div>
     </nav>
 
-    <main>
-        <div style="margin-top: 100px;"></div>
+    <main class="subpage-main">
 
         <!-- 1. INTRODUCCIÓN -->
         <section id="about-intro">
             <div class="container">
-                <h4 class="section-label">La Historia</h4>
-                <div class="grid grid-2" style="align-items: center;">
+                <div class="grid grid-2" style="gap: 6rem; align-items: center;">
                     <div class="reveal">
-                        <h1>Construyo puentes entre marcas y personas.</h1>
-                        <p>Siempre he creído que la belleza tiene el poder de transformar el día de alguien. Mi misión
-                            es ir más allá de la creación de contenido; busco inspirar a las personas a encontrar la
-                            estética en lo cotidiano y ayudar a las marcas a comunicar su alma con autenticidad.</p>
-                        <p>Ya sea a través de un proyecto audiovisual, una narrativa de diseño o un detalle visual
-                            capturado con intención, mi objetivo es dejar una chispa de inspiración en cada persona que
-                            conecte con mi trabajo.</p>
+                        <span class="label-main">La Historia</span>
+                        <h1 style="margin-top: 1.5rem;">Construyo puentes entre marcas y personas.</h1>
+                        <p style="margin-top: 2rem; font-size: 1.1rem; line-height: 1.8; opacity: 0.8;">Siempre he
+                            creído que la belleza tiene el poder de transformar el día de alguien. Mi misión es ir más
+                            allá de la creación de contenido; busco inspirar a las personas a encontrar la estética en
+                            lo cotidiano y ayudar a las marcas a comunicar su alma con autenticidad.</p>
+                        <p style="margin-top: 1.5rem; line-height: 1.8; opacity: 0.7;">Ya sea a través de un proyecto
+                            audiovisual, una narrativa de diseño o un detalle visual capturado con intención, mi
+                            objetivo es dejar una chispa de inspiración en cada persona que conecte con mi trabajo.</p>
                     </div>
                     <div class="reveal">
-                        <div class="img-wrapper" style="aspect-ratio: 4/5; overflow: hidden; border-radius: 2px;">
-                            <img src="assets/images/creator.png" alt="Steff Ramirez"
-                                style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="img-wrapper"
+                            style="aspect-ratio: 4/5; overflow: hidden; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.05);">
+                            <img src="assets/images/steff_remastered.png" alt="Steff Ramirez" loading="lazy"
+                                style="width: 100%; height: 100%; object-fit: cover; transition: transform 1.5s ease;">
                         </div>
                     </div>
                 </div>
@@ -64,55 +66,63 @@
         </section>
 
         <!-- 2. VALORES / PRINCIPIOS -->
-        <section id="values" style="background-color: var(--bg-secondary);">
+        <section id="values" style="background-color: var(--bg-secondary); padding: var(--space-sections) 0;">
             <div class="container">
-                <h4 class="section-label">Valores y Principios</h4>
-                <div class="grid grid-3">
-                    <div class="card">
+                <div class="section-header reveal" style="text-align: center; margin-bottom: 5rem;">
+                    <span class="label-main">Valores y Principios</span>
+                    <h2>Lo que guía cada decisión.</h2>
+                </div>
+                <div class="grid grid-3 reveal" style="gap: 3rem;">
+                    <div class="value-card">
                         <h3>Precisión Estética</h3>
                         <p>Los visuales no solo deben verse bien, deben sentirse adecuados para el ecosistema específico
                             de la marca.</p>
                     </div>
-                    <div class="card">
+                    <div class="value-card">
                         <h3>Profundidad Estratégica</h3>
-                        <p>Cada pieza de contenido sirve a un propósito en el viaje del cliente.</p>
+                        <p>Cada pieza de contenido sirve a un propósito real en el viaje consciente del cliente.</p>
                     </div>
-                    <div class="card">
+                    <div class="value-card">
                         <h3>Claridad Radical</h3>
-                        <p>Comunicación honesta y entregables claros en cada paso del proceso.</p>
+                        <p>Comunicación honesta y entregables claros en cada paso del proceso creativo.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 3. PROCESO / CÓMO TRABAJO -->
-        <section id="process">
+        <section id="process" style="padding: var(--space-sections) 0;">
             <div class="container">
-                <h4 class="section-label">El Proceso</h4>
-                <div class="grid grid-4" style="text-align: center;">
-                    <div>
-                        <h2 style="font-size: 3rem; opacity: 0.2; margin-bottom: 0;">01</h2>
+                <div class="section-header reveal" style="margin-bottom: 5rem;">
+                    <span class="label-main">El Proceso</span>
+                    <h2>Metodología de trabajo.</h2>
+                </div>
+                <div class="grid grid-4" style="gap: 3rem;">
+                    <div class="process-item reveal" style="transition-delay: 0.1s;">
+                        <span class="process-number">01.</span>
                         <h3>Descubrimiento</h3>
-                        <p style="font-size: 0.95rem;">Entender tus objetivos, audiencia y voz de marca.</p>
+                        <p>Entender tus objetivos, audiencia y la voz única de tu marca.</p>
                     </div>
-                    <div>
-                        <h2 style="font-size: 3rem; opacity: 0.2; margin-bottom: 0;">02</h2>
+                    <div class="process-item reveal" style="transition-delay: 0.2s;">
+                        <span class="process-number">02.</span>
                         <h3>Planificación</h3>
-                        <p style="font-size: 0.95rem;">Storyboarding y desarrollo de guiones para el máximo impacto.</p>
+                        <p>Storyboarding y desarrollo de guones para el máximo impacto visual.</p>
                     </div>
-                    <div>
-                        <h2 style="font-size: 3rem; opacity: 0.2; margin-bottom: 0;">03</h2>
+                    <div class="process-item reveal" style="transition-delay: 0.3s;">
+                        <span class="process-number">03.</span>
                         <h3>Producción</h3>
-                        <p style="font-size: 0.95rem;">Rodaje y fotografía de alta gama en entornos curados.</p>
+                        <p>Rodaje y fotografía de alta gama en entornos seleccionados.</p>
                     </div>
-                    <div>
-                        <h2 style="font-size: 3rem; opacity: 0.2; margin-bottom: 0;">04</h2>
+                    <div class="process-item reveal" style="transition-delay: 0.4s;">
+                        <span class="process-number">04.</span>
                         <h3>Entrega</h3>
-                        <p style="font-size: 0.95rem;">Activos pulidos listos para publicarse y generar resultados.</p>
+                        <p>Activos pulidos listos para publicarse y generar resultados inmediatos.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+
 
         <!-- CTA -->
         <section id="cta" style="text-align: center; border-top: 1px solid var(--border);">

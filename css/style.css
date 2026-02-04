@@ -30,7 +30,7 @@
     font-display: block;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=block');
 
 /* 
   REFINED DESIGN SYSTEM - MODERN & PREMIUM
@@ -317,23 +317,28 @@ nav.nav-dark .mobile-menu-btn span {
 /* Hero Section - Personal Split Style */
 /* Hero Section - Modern Full-Width with Overlay */
 .hero {
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 100px 0;
+}
+
+/* Adjustments for non-hero pages to avoid header overlap */
+main.subpage-main {
+    padding-top: 120px;
 }
 
 .hero-bg {
     position: absolute;
-    top: -10%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 120%;
-    background: url('../assets/images/hero_new.png') no-repeat center 10%/cover;
+    height: 100%;
+    background: url('../assets/images/steff.png') no-repeat center 20%/cover;
     z-index: -1;
-    will-change: transform;
 }
 
 .hero::before {
@@ -586,9 +591,10 @@ nav.nav-dark .mobile-menu-btn span {
 }
 
 .offering-card {
-    padding: 3rem 0;
+    padding: 3rem 2rem;
     border-top: 1px solid var(--border);
-    transition: var(--transition-main);
+    border-radius: 2px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .offering-card::before {
@@ -613,11 +619,14 @@ nav.nav-dark .mobile-menu-btn span {
     color: var(--text-secondary);
     line-height: 1.7;
     max-width: 90%;
+    min-height: 5.1rem;
+    /* Ensures 3 lines of height for alignment */
 }
 
 .offering-card:hover {
-    transform: translateY(10px);
-    /* Movimiento suave sin alterar el tamaño de la caja */
+    background: white;
+    transform: translateY(-10px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.04);
 }
 
 .card {
@@ -639,34 +648,101 @@ nav.nav-dark .mobile-menu-btn span {
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.04);
 }
 
-.process-list {
-    margin-top: 2rem;
+.card.static-card:hover {
+    transform: none;
+    box-shadow: none;
 }
 
+/* Process Section Polishing */
 .process-item {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border);
+    padding: 2rem;
+    border-left: 1px solid var(--border);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.process-item:last-child {
-    border-bottom: none;
+.process-item:hover {
+    background: white;
+    border-left: 1px solid var(--text-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
 }
 
-.process-item h4 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
+.process-number {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 1rem;
 }
 
-.process-item p {
+/* Value Cards */
+.value-card {
+    padding: 3rem 2rem;
+    background: transparent;
+    border-left: 1px solid var(--border);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.value-card:hover {
+    background: white;
+    border-left: 1px solid var(--text-primary);
+    transform: translateX(10px);
+    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.03);
+}
+
+.value-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+/* Forms */
+#contact-form .form-group {
+    margin-bottom: 2rem;
+}
+
+#contact-form label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.8rem;
+    color: var(--text-dim);
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--text-primary);
+    background: white;
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 /* Footer */
@@ -778,6 +854,16 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .hero {
+        height: auto;
+        min-height: 100%;
+        padding: 120px 0 60px;
+    }
+
+    .hero-bg {
+        background-position: center center;
+    }
+
     .container {
         padding: 0 6vw;
     }

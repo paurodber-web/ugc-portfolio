@@ -27,6 +27,7 @@
                 <span></span>
             </button>
             <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="services.html">Servicios</a></li>
                 <li><a href="work.html" class="active">Proyectos</a></li>
                 <li><a href="about.html">Sobre mí</a></li>
@@ -36,51 +37,57 @@
         </div>
     </nav>
 
-    <main>
-        <div style="margin-top: 100px;"></div>
+    <main class="subpage-main">
 
         <!-- INTRODUCCIÓN DE CATEGORÍA -->
         <section id="work-intro">
             <div class="container">
-                <h4 class="section-label">Proyectos Seleccionados</h4>
-                <h1>Excelencia visual en diversas industrias.</h1>
-                <p class="section-intro-text">Una selección curada de trabajos enfocados en la consistencia estética y
-                    la narrativa orientada a la conversión.</p>
+                <span class="label-main">Proyectos Seleccionados</span>
+                <h1 style="margin-top: 1.5rem; max-width: 800px;">Excelencia visual en diversas industrias.</h1>
+                <p class="section-intro-text" style="margin-top: 1.5rem; max-width: 600px; opacity: 0.7;">Una selección
+                    curada de trabajos enfocados en la consistencia estética y la narrativa orientada a la conversión.
+                </p>
             </div>
         </section>
 
         <!-- REJILLA VISUAL -->
-        <section id="work-grid">
+        <section id="work-grid-section" style="padding-bottom: var(--space-sections);">
             <div class="container">
                 <div class="work-grid">
-                    <div class="work-item large">
-                        <img src="assets/images/featured_1.png" alt="Proyecto de Belleza">
-                        <div style="padding: var(--space-s);">
+                    <div class="work-item reveal">
+                        <div class="img-wrapper" style="aspect-ratio: 1/1;">
+                            <img src="assets/images/featured_1.png" alt="Lume Skincare" loading="lazy">
+                        </div>
+                        <div class="work-info">
+                            <span>VÍDEO UGC • FOTOGRAFÍA</span>
                             <h3>Lume Skincare</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-secondary);">VÍDEO UGC • FOTOGRAFÍA DE
-                                PRODUCTO</p>
                         </div>
                     </div>
-                    <div class="work-item small">
-                        <img src="assets/images/featured_2.png" alt="Proyecto de Moda">
-                        <div style="padding: var(--space-s);">
+                    <div class="work-item reveal">
+                        <div class="img-wrapper" style="aspect-ratio: 1/1;">
+                            <img src="assets/images/featured_2.png" alt="Aura Linen" loading="lazy">
+                        </div>
+                        <div class="work-info">
+                            <span>EDITORIAL • REDES SOCIALES</span>
                             <h3>Aura Linen</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-secondary);">EDITORIAL • CONTENIDO SOCIAL</p>
                         </div>
                     </div>
-                    <div class="work-item small">
-                        <img src="assets/images/featured_3.png" alt="Proyecto de Decoración">
-                        <div style="padding: var(--space-s);">
+                    <div class="work-item reveal">
+                        <div class="img-wrapper" style="aspect-ratio: 1/1;">
+                            <img src="assets/images/featured_3.png" alt="Nest Decor" loading="lazy">
+                        </div>
+                        <div class="work-info">
+                            <span>LIFESTYLE • DECORACIÓN</span>
                             <h3>Nest Decor</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-secondary);">FOTOGRAFÍA LIFESTYLE</p>
                         </div>
                     </div>
-                    <div class="work-item large">
-                        <img src="assets/images/hero.png" alt="Proyecto Académico/Estilo de Vida">
-                        <div style="padding: var(--space-s);">
+                    <div class="work-item reveal">
+                        <div class="img-wrapper" style="aspect-ratio: 1/1;">
+                            <img src="assets/images/hero.png" alt="Modern Living" loading="lazy">
+                        </div>
+                        <div class="work-info">
+                            <span>DIRECCIÓN CREATIVA • BRANDING</span>
                             <h3>Modern Living</h3>
-                            <p style="font-size: 0.8rem; color: var(--text-secondary);">DIRECCIÓN CREATIVA • BRANDING
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -88,27 +95,28 @@
         </section>
 
         <!-- TEXTO CONTEXTUAL -->
-        <section id="work-context" style="background-color: var(--bg-secondary);">
+        <section id="work-context" style="background-color: var(--bg-secondary); padding: var(--space-sections) 0;">
             <div class="container">
-                <div class="grid grid-2">
-                    <div>
+                <div class="grid grid-2" style="gap: 4rem; align-items: center;">
+                    <div class="reveal">
                         <h2>Profundidad y Versatilidad</h2>
                     </div>
-                    <div>
-                        <p>Cada proyecto se aborda desde cero. No creo en el contenido de "talla única". En su lugar,
-                            analizo los pilares estéticos específicos de cada marca para crear activos que se sientan
-                            nativos pero elevados.</p>
+                    <div class="reveal">
+                        <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.8;">Cada proyecto se aborda desde
+                            cero. No creo en el contenido de "talla única". En su lugar, analizo los pilares estéticos
+                            específicos de cada marca para crear activos que se sientan nativos pero elevados.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA -->
-        <section id="cta" style="text-align: center; border-top: 1px solid var(--border);">
-            <div class="container">
+        <section id="cta"
+            style="text-align: center; padding: var(--space-sections) 0; border-top: 1px solid var(--border);">
+            <div class="container reveal">
                 <h2>¿Quieres ver más ejemplos relevantes?</h2>
-                <a href="contact.html" class="btn btn-primary"
-                    style="background: black; color: white; margin-top: var(--space-m);">Solicitar Casos de Estudio</a>
+                <a href="contact.html" class="btn btn-primary" style="margin-top: 2.5rem;">Solicitar Casos de
+                    Estudio</a>
             </div>
         </section>
     </main>

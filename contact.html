@@ -27,6 +27,7 @@
                 <span></span>
             </button>
             <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="services.html">Servicios</a></li>
                 <li><a href="work.html">Proyectos</a></li>
                 <li><a href="about.html">Sobre mí</a></li>
@@ -36,80 +37,70 @@
         </div>
     </nav>
 
-    <main>
-        <div style="margin-top: 100px;"></div>
+    <main class="subpage-main">
 
         <!-- 1. INTRO -->
         <section id="contact-intro">
             <div class="container">
-                <h4 class="section-label">Contacto</h4>
-                <h1>Construyamos algo excepcional.</h1>
-                <p class="section-intro-text">Actualmente estoy aceptando nuevos proyectos para 2026. Hablemos sobre
-                    cómo podemos elevar la presencia visual de tu marca.</p>
+                <span class="label-main">Contacto</span>
+                <h1 style="margin-top: 1.5rem; max-width: 800px;">Construyamos algo excepcional.</h1>
+                <p class="section-intro-text" style="max-width: 600px; margin-top: 1.5rem; opacity: 0.7;">Actualmente
+                    estoy aceptando nuevos proyectos seleccionados. Hablemos sobre cómo podemos elevar la presencia
+                    visual de tu marca.</p>
             </div>
         </section>
 
-        <section id="contact-details">
+        <section id="contact-details" style="padding-bottom: var(--space-sections);">
             <div class="container">
-                <div class="grid grid-2">
+                <div class="grid grid-2" style="gap: 6rem;">
                     <!-- 2. TIPOS DE COLABORACIÓN -->
-                    <div>
-                        <h4 class="section-label">Tipos de Colaboración</h4>
-                        <div style="margin-top: var(--space-s);">
-                            <div style="margin-bottom: var(--space-m);">
-                                <h3>Campaña Única</h3>
-                                <p style="font-size: 0.95rem; opacity: 0.8;">Activos enfocados para un lanzamiento
-                                    específico o campaña de temporada.</p>
+                    <div class="reveal">
+                        <span class="label-main">Tipos de Colaboración</span>
+                        <div style="margin-top: 2.5rem;">
+                            <div style="margin-bottom: 3rem;">
+                                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Campaña Única</h3>
+                                <p style="font-size: 1rem; line-height: 1.7; opacity: 0.7;">Activos enfocados para un
+                                    lanzamiento específico o campaña de temporada.</p>
                             </div>
-                            <div style="margin-bottom: var(--space-m);">
-                                <h3>Asociación Mensual</h3>
-                                <p style="font-size: 0.95rem; opacity: 0.8;">Soporte de contenido integrado para un
-                                    crecimiento constante de la marca.</p>
+                            <div style="margin-bottom: 3rem;">
+                                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Asociación Mensual</h3>
+                                <p style="font-size: 1rem; line-height: 1.7; opacity: 0.7;">Soporte de contenido
+                                    integrado para un crecimiento constante de la marca.</p>
                             </div>
-                            <div style="margin-bottom: var(--space-m);">
-                                <h3>Consultoría Creativa</h3>
-                                <p style="font-size: 0.95rem; opacity: 0.8;">Estrategia y moodboarding para marcas que
-                                    gestionan su producción internamente.</p>
+                            <div>
+                                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Consultoría Creativa</h3>
+                                <p style="font-size: 1rem; line-height: 1.7; opacity: 0.7;">Estrategia y moodboarding
+                                    para marcas que gestionan su producción internamente.</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 3. FORMULARIO DE CONTACTO -->
-                    <div class="card" style="border: 1px solid var(--border); padding: var(--space-m);">
+                    <div class="card reveal static-card" style="background: white; padding: 3rem;">
                         <form action="#" method="POST" id="contact-form">
-                            <div style="margin-bottom: var(--space-s);">
-                                <label for="name"
-                                    style="display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">Nombre</label>
-                                <input type="text" id="name" name="name" required
-                                    style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit;">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
                             </div>
-                            <div style="margin-bottom: var(--space-s);">
-                                <label for="email"
-                                    style="display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">Email</label>
-                                <input type="email" id="email" name="email" required
-                                    style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit;">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="hola@tu-marca.com">
                             </div>
-                            <div style="margin-bottom: var(--space-s);">
-                                <label for="project"
-                                    style="display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">Tipo
-                                    de Proyecto</label>
-                                <select id="project" name="project"
-                                    style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; background: white;">
+                            <div class="form-group">
+                                <label for="project">Tipo de Proyecto</label>
+                                <select id="project" name="project">
                                     <option value="ugc">Vídeo UGC</option>
-                                    <option value="photo">Fotografía</option>
+                                    <option value="photo">Fotografía Editorial</option>
                                     <option value="retainer">Asociación Mensual</option>
                                     <option value="other">Otro</option>
                                 </select>
                             </div>
-                            <div style="margin-bottom: var(--space-m);">
-                                <label for="message"
-                                    style="display: block; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">Cuéntame
-                                    sobre tu marca</label>
+                            <div class="form-group">
+                                <label for="message">Cuéntame sobre tu marca</label>
                                 <textarea id="message" name="message" rows="4"
-                                    style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
+                                    placeholder="Háblame de tu visión y objetivos..."></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary"
-                                style="width: 100%; background: black; color: white;">Enviar Solicitud</button>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitud</button>
                         </form>
                     </div>
                 </div>
