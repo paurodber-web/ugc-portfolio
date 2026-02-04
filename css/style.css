@@ -38,12 +38,14 @@
     --bg-tertiary: #2d2421;
     /* Deep terracotta/espresso */
 
-    --text-primary: #2d2421;
+    --text-primary: var(--accent-wine);
     --text-secondary: #7a6a64;
     --text-dim: #b5a49e;
 
     --accent: #e6b8a2;
     /* Soft terracotta accent */
+    --accent-wine: #8b2635;
+    /* Deep wine red (adjusted to be more visible) */
     --accent-dark: #deab90;
     --border: rgba(45, 36, 33, 0.08);
     --border-light: rgba(255, 255, 255, 0.15);
@@ -172,9 +174,9 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
     z-index: 1000;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     /* Constant height */
     transition: padding 0.4s ease,
         background 0.4s ease,
@@ -182,7 +184,7 @@ nav {
 }
 
 nav.scrolled {
-    padding: 1rem 0;
+    padding: 1.25rem 0;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
@@ -202,7 +204,7 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 50px;
     /* Fixed height for the navigation content */
 }
 
@@ -213,27 +215,21 @@ nav .container {
     align-items: center;
 }
 
-.heart-svg {
-    width: 100px;
-    height: auto;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.heart-svg path {
-    fill: #ffffff;
-    stroke: #ffffff;
-    /* Adding stroke to thicken the lines */
-    stroke-width: 50;
-    /* High value because of the large SVG coordinate system */
+.logo-img {
+    height: 50px;
+    width: auto;
+    filter: invert(1);
+    opacity: 0.8;
     transition: var(--transition-main);
 }
 
-nav.scrolled .heart-svg path,
-nav.nav-dark .heart-svg path {
-    fill: var(--text-primary);
-    stroke: var(--text-primary);
+nav.scrolled .logo-img,
+nav.nav-dark .logo-img {
+    filter: invert(18%) sepia(54%) saturate(3088%) hue-rotate(334deg) brightness(81%) contrast(97%);
+    opacity: 1;
 }
+
+/* Logo inversion handled above */
 
 nav.scrolled .logo,
 nav.nav-dark .logo {
@@ -274,12 +270,13 @@ nav.nav-dark .logo {
 
 nav.scrolled .nav-links a,
 nav.nav-dark .nav-links a {
-    color: var(--text-primary);
+    color: var(--accent-wine);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     opacity: 1;
+    color: var(--accent-wine) !important;
     text-shadow: 0.6px 0 0 currentColor;
 }
 
@@ -322,6 +319,14 @@ nav.nav-dark .mobile-menu-btn span {
 /* Adjustments for non-hero pages to avoid header overlap */
 main.subpage-main {
     padding-top: 120px;
+}
+
+.subpage-main h1 {
+    max-width: 900px;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.15;
 }
 
 .hero-bg {
@@ -475,14 +480,14 @@ main.subpage-main {
 }
 
 .btn-primary {
-    background: var(--text-primary);
+    background: var(--accent-wine);
     color: white;
     border-radius: 0;
     /* Estilo boutique cuadrado */
 }
 
 .btn-primary:hover {
-    background: #000;
+    background: #721f2a;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -496,8 +501,8 @@ main.subpage-main {
 }
 
 .btn-secondary:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
+    color: var(--accent-wine);
+    border-bottom-color: var(--accent-wine);
 }
 
 /* Grid System */
@@ -563,7 +568,7 @@ main.subpage-main {
     /* Ajuste proporcional */
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--accent);
+    color: var(--accent-wine);
     display: block;
     margin-bottom: 0.4rem;
 }
@@ -595,7 +600,7 @@ main.subpage-main {
     display: block;
     font-family: var(--font-serif);
     font-size: 0.85rem;
-    color: var(--accent);
+    color: var(--accent-wine);
     margin-bottom: 2rem;
     letter-spacing: 0.2em;
 }
@@ -618,6 +623,7 @@ main.subpage-main {
 
 .offering-card:hover {
     background: white;
+    border-top-color: var(--accent-wine);
     transform: translateY(-10px);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.04);
 }
@@ -659,15 +665,22 @@ main.subpage-main {
 
 .process-item:hover {
     background: white;
-    border-left: 1px solid var(--text-primary);
+    border-left: 1px solid var(--accent-wine);
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
+}
+
+.process-item h3,
+.process-item h4 {
+    color: var(--accent-wine);
+    margin-bottom: 1rem;
 }
 
 .process-number {
     font-family: var(--font-serif);
     font-size: 0.8rem;
-    opacity: 0.4;
+    color: var(--accent-wine);
+    opacity: 0.6;
     display: block;
     margin-bottom: 1rem;
 }
@@ -682,7 +695,7 @@ main.subpage-main {
 
 .value-card:hover {
     background: white;
-    border-left: 1px solid var(--text-primary);
+    border-left: 1px solid var(--accent-wine);
     transform: translateX(10px);
     box-shadow: 20px 0 60px rgba(0, 0, 0, 0.03);
 }
@@ -729,7 +742,7 @@ main.subpage-main {
 #contact-form select:focus,
 #contact-form textarea:focus {
     outline: none;
-    border-color: var(--text-primary);
+    border-color: var(--accent-wine);
     background: white;
 }
 
@@ -740,7 +753,7 @@ main.subpage-main {
 
 /* Footer */
 footer {
-    padding: 8rem 0 4rem;
+    padding: 4rem 0 2rem;
     background: #000;
     color: white;
 }
@@ -749,7 +762,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
 }
 
 .footer-logo {
@@ -760,10 +773,17 @@ footer {
     opacity: 0.9;
 }
 
+.footer-logo-img {
+    width: 120px;
+    height: auto;
+    filter: invert(49%) sepia(10%) saturate(692%) hue-rotate(332deg) brightness(89%) contrast(85%);
+}
+
 .footer-bottom {
     display: flex;
     justify-content: space-between;
-    padding-top: 3rem;
+    align-items: center;
+    padding-top: 2rem;
     border-top: 1px solid var(--border-light);
     font-size: 0.75rem;
     color: var(--text-dim);
