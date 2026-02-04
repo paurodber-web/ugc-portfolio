@@ -1,5 +1,36 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Allison&display=swap');
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../assets/fonts/Satoshi-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../assets/fonts/Satoshi-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../assets/fonts/Satoshi-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Allison';
+    src: url('../assets/fonts/Allison-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=block');
 
 /* 
   REFINED DESIGN SYSTEM - MODERN & PREMIUM
@@ -27,6 +58,7 @@
     /* Typography */
     --font-main: 'Satoshi', sans-serif;
     --font-serif: 'Playfair Display', serif;
+    --font-heading: 'Playfair Display', serif;
     --font-script: 'Allison', cursive;
     --lh-body: 1.6;
     --lh-heading: 1.1;
@@ -55,10 +87,21 @@
 }
 
 .italic {
+    font-family: inherit;
+    font-style: normal;
+    font-size: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
+}
+
+.script-text {
     font-family: var(--font-script);
-    font-size: 1.4em;
-    line-height: 0;
-    vertical-align: middle;
+    font-size: 1.8em;
+    line-height: 1;
+    vertical-align: baseline;
+    font-weight: 400;
+    text-transform: none;
+    display: inline-block;
 }
 
 html,
@@ -136,53 +179,115 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
     z-index: 1000;
-    transition: var(--transition-main);
+    border-bottom: 1px solid transparent;
+    /* Constant height */
+    transition: padding 0.4s ease,
+        background 0.4s ease,
+        border-color 0.4s ease;
 }
 
 nav.scrolled {
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
+}
+
+nav.nav-dark {
+    background: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Force immediate state on subpages with white backgrounds */
+nav.nav-dark * {
+    transition: none !important;
 }
 
 nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
+    /* Fixed height for the navigation content */
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 500;
     text-decoration: none;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+}
+
+.heart-svg {
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.heart-svg path {
+    fill: #ffffff;
+    stroke: #ffffff;
+    /* Adding stroke to thicken the lines */
+    stroke-width: 50;
+    /* High value because of the large SVG coordinate system */
+    transition: var(--transition-main);
+}
+
+nav.scrolled .heart-svg path,
+nav.nav-dark .heart-svg path {
+    fill: var(--text-primary);
+    stroke: var(--text-primary);
+}
+
+nav.scrolled .logo,
+nav.nav-dark .logo {
     color: var(--text-primary);
-    letter-spacing: -0.01em;
 }
 
 .nav-links {
     display: flex;
-    gap: 4rem;
+    gap: 0;
     list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    width: 95px;
+    /* Fixed container to prevent expansion on any OS */
+    text-align: right;
+    margin-left: 1.5rem;
 }
 
 .nav-links a {
+    font-family: var(--font-main);
     text-decoration: none;
-    color: var(--text-primary);
-    font-size: 0.75rem;
+    color: #ffffff;
+    font-size: 0.72rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    opacity: 0.5;
-    transition: var(--transition-main);
+    letter-spacing: 0.18em;
+    opacity: 0.9;
+    display: block;
+    line-height: 1;
+    min-width: 80px;
+    /* Reserve space to prevent expansion */
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+nav.scrolled .nav-links a,
+nav.nav-dark .nav-links a {
+    color: var(--text-primary);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     opacity: 1;
+    text-shadow: 0.6px 0 0 currentColor;
 }
 
 .mobile-menu-btn {
@@ -200,46 +305,70 @@ nav .container {
     display: block;
     width: 24px;
     height: 1px;
-    background: var(--text-primary);
+    background: #ffffff;
     transition: var(--transition-main);
 }
 
+nav.scrolled .mobile-menu-btn span,
+nav.nav-dark .mobile-menu-btn span {
+    background: var(--text-primary);
+}
+
 /* Hero Section - Personal Split Style */
+/* Hero Section - Modern Full-Width with Overlay */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-    background-color: var(--bg-primary);
-    padding: 100px 0 0 0;
+    padding: 100px 0;
+}
+
+.hero-bg {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: url('../assets/images/hero_new.png') no-repeat center 10%/cover;
+    z-index: -1;
+    will-change: transform;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
 }
 
 .hero .container {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    align-items: center;
-    gap: 4vw;
-    max-width: 100%;
-    padding: 0 8vw;
-    z-index: 2;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: block;
+    /* Centrado clásico o alineado a izquierda */
 }
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 140px 0 80px;
-    background-color: var(--bg-primary);
+.hero-content {
+    max-width: 580px;
+    margin-top: 12rem;
 }
 
-.hero .container {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    /* Asimetría elegante */
-    align-items: center;
-    gap: 0;
-    /* Controlamos el gap con margins */
+@media (max-width: 1024px) {
+    .hero::before {
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0.3) 100%);
+    }
 }
 
 .hero-content {
@@ -305,31 +434,32 @@ nav .container {
 .hero-tag {
     display: inline-block;
     padding: 0.5rem 0;
-    /* Sin bordes, solo texto elegante */
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--text-dim);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
 }
 
 .hero h1 {
-    color: var(--text-primary);
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    line-height: 1.05;
-    margin-bottom: 2.5rem;
+    color: #ffffff;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
     font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-description {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 300;
     letter-spacing: -0.01em;
-    color: var(--text-secondary);
-    max-width: 520px;
-    margin-bottom: 4rem;
-    line-height: 1.9;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 460px;
+    /* More compact description */
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    opacity: 1;
 }
 
 /* Buttons - Premium Reveal */
@@ -360,8 +490,8 @@ nav .container {
 }
 
 .btn-secondary {
-    color: var(--text-primary);
-    border-bottom: 1px solid var(--text-primary);
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
     /* Estilo editorial link */
     padding: 1rem 0;
     margin-left: 2rem;
