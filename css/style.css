@@ -107,6 +107,8 @@ body {
     overflow-x: hidden;
     position: relative;
     -webkit-font-smoothing: antialiased;
+    background-color: #000;
+    /* Fix for bottom white gap/rubber-banding on tablets */
 }
 
 body {
@@ -753,6 +755,9 @@ main.subpage-main {
 
 /* Footer */
 footer {
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
     padding: 4rem 0 2rem;
     background: #000;
     color: white;
